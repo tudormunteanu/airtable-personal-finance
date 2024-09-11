@@ -1,0 +1,40 @@
+[tool.poetry]
+name = "airtable-personal-finance"
+version = "0.1.0"
+description = ""
+authors = ["tudormunteanu <tudor@compasslabs.ai>"]
+readme = "README.md"
+packages = [{include = "airtable_personal_finance"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+click = "^8.1.7"
+requests = "^2.32.3"
+python-dotenv = "^1.0.1"
+pyairtable = "^2.3.3"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+black = "^24.8.0"
+
+[tool.black]
+line-length = 88
+target-version = ['py39']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
